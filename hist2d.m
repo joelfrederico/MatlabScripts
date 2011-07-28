@@ -25,6 +25,10 @@ function [varargout]=hist2d(x,xp,res)
 	maxxp  = maxxp-delta;
 	delxp  = (maxxp-minxp)/res;
 	edgexp = minxp:delxp:maxxp;
+
+	% cpp =3.2439*10^-14;
+	% area=delx*delxp;
+	% factor=cpp/area;
 	
 	for i=1:res
 		ind=find(and(x>=minx+delx*i,x<minx+delx*(i+1)));
@@ -33,7 +37,7 @@ function [varargout]=hist2d(x,xp,res)
 	end
 	%display(n);
 	imgout=transpose(n);
-	h=image([min(edgex),max(edgex)],[min(edgexp),max(edgexp)],imgout)
+	h=imagesc([min(edgex),max(edgex)],[min(edgexp),max(edgexp)],imgout)
 	set(gca,'YDir','normal');
 	switch nargout
 		case 1
