@@ -2,6 +2,7 @@ function [varargout]=plotyyannotate(x1,y1,x2,y2,marker,titleS,xlabelS,ylabel1S,y
 	[ax,h1,h2]=plotyy(x1,y1,x2,y2);
 	set(h1,'Marker',marker);
 	set(h2,'Marker',marker);
+	set(h2,'LineStyle','--');
 	title(titleS);
 	xlabel(xlabelS);
 	set(get(ax(1),'Ylabel'),'String',ylabel1S);
