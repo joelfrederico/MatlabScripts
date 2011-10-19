@@ -37,7 +37,9 @@ function [varargout]=hist2d(x,xp,res)
 	end
 	%display(n);
 	imgout=transpose(n);
-	h=imagesc([min(edgex),max(edgex)],[min(edgexp),max(edgexp)],imgout)
+	h=imagesc([min(edgex),max(edgex)],[min(edgexp),max(edgexp)],imgout);
+	% axis image;
+	% axis xy;
 	set(gca,'YDir','normal');
 	switch nargout
 		case 1
@@ -45,8 +47,11 @@ function [varargout]=hist2d(x,xp,res)
 		case 2
 			varargout={imgout,h};
 		case 3
-			varargout={imgout,[min(edgex),max(edgex)],[min(edgexp),max(edgexp)]};
-		case 4
-			varargout={imgout,[min(edgex),max(edgex)],[min(edgexp),max(edgexp)], h};
+			% display('hi');
+			varargout={n,edgex,edgexp};
+		% case 3
+		%         varargout={imgout,[min(edgex),max(edgex)],[min(edgexp),max(edgexp)]};
+		% case 4
+		%         varargout={imgout,[min(edgex),max(edgex)],[min(edgexp),max(edgexp)], h};
 	end
 end
