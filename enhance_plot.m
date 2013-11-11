@@ -70,7 +70,8 @@ for i=1:length(HaArray)
 	%set(Ha,'YaxisLocation','right')
 	%set(Ha,'YaxisLocation','left')
 	set(Ht,'fontname',fontname);
-	set(Ht,'fontsize',fontsize);
+	set(Ht,'fontsize',fontsize+4);
+	set(Ht,'fontweight','bold');
 	set(Hy,'VerticalAlignment','bottom');
 	set(Hx,'VerticalAlignment','cap');
 	set(Ht,'VerticalAlignment','baseline');
